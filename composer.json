@@ -1,0 +1,19 @@
+{
+    "name": "irpug/facal",
+    "authors": [
+        {
+            "name": "Reza Haghighi",
+            "email": "reza.haghighi@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "nesbot/carbon": "~1.17",
+        "symfony/var-dumper": "~2.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "IrPUG\\FaCal\\": "src/IrPUG/FaCal"
+        }
+    }
+}
