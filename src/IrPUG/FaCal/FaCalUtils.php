@@ -1,7 +1,7 @@
 <?php
 namespace IrPUG\FaCal;
 
-use IrPUG\FaCal\Lib\PersianDateTime;
+use DateTime;
 use IntlDateFormatter;
 use IntlCalendar;
 
@@ -110,14 +110,88 @@ class FaCalUtils
         static::$toStringFormat = $format;
     }
 
+    /**
+     * http://www.icu-project.org/apiref/icu4c/classSimpleDateFormat.html#details
+     *
+     * @param DateTime $dateTimeObj
+     * @param null $format
+     * @param string $locale
+     * @return string
+     */
     public static function printDateTime(
-        PersianDateTime $persianDateTime,
+        DateTime $dateTimeObj,
         $format = null,
         $locale = self::DEFAULT_LOCALE
     ) {
         return IntlDateFormatter::formatObject(
-            IntlCalendar::fromDateTime($persianDateTime),
+            IntlCalendar::fromDateTime($dateTimeObj),
             $format,
+            $locale
+        );
+    }
+
+    public static function getYear(
+        DateTime $dateTimeObj,
+        $locale = self::DEFAULT_LOCALE
+    ) {
+        return IntlDateFormatter::formatObject(
+            IntlCalendar::fromDateTime($dateTimeObj),
+            'Y',
+            $locale
+        );
+    }
+
+    public static function getMonthNum(
+        DateTime $dateTimeObj,
+        $locale = self::DEFAULT_LOCALE
+    ) {
+        return IntlDateFormatter::formatObject(
+            IntlCalendar::fromDateTime($dateTimeObj),
+            'M',
+            $locale
+        );
+    }
+
+    public static function getMonthName(
+        DateTime $dateTimeObj,
+        $locale = self::DEFAULT_LOCALE
+    ) {
+        return IntlDateFormatter::formatObject(
+            IntlCalendar::fromDateTime($dateTimeObj),
+            'MMMM',
+            $locale
+        );
+    }
+
+    public static function getWeekdayName(
+        DateTime $dateTimeObj,
+        $locale = self::DEFAULT_LOCALE
+    ) {
+        return IntlDateFormatter::formatObject(
+            IntlCalendar::fromDateTime($dateTimeObj),
+            'EEEE',
+            $locale
+        );
+    }
+
+    public static function getWeekdayNum(
+        DateTime $dateTimeObj,
+        $locale = self::DEFAULT_LOCALE
+    ) {
+        return IntlDateFormatter::formatObject(
+            IntlCalendar::fromDateTime($dateTimeObj),
+            'e',
+            $locale
+        );
+    }
+
+    public static function getQuarter(
+        DateTime $dateTimeObj,
+        $locale = self::DEFAULT_LOCALE
+    ) {
+        return IntlDateFormatter::formatObject(
+            IntlCalendar::fromDateTime($dateTimeObj),
+            'Q',
             $locale
         );
     }

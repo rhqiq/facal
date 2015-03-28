@@ -32,3 +32,9 @@ $pDate->setPersianDate(1394, 2, 2);
 
 dump(FaCalUtils::printDateTime($pDate, FaCalUtils::FULL));
 dump(FaCalUtils::printDateTime($pDate, "EEEE, d 'of' MMMM y"));
+dump(FaCalUtils::getYear($pDate));
+dump(FaCalUtils::getMonthNum($pDate));
+dump(FaCalUtils::getMonthName($pDate));
+dump(FaCalUtils::getWeekdayName($pDate));
+dump(FaCalUtils::getWeekdayNum($pDate));
+dump(FaCalUtils::getQuarter($pDate));
