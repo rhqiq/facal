@@ -1,9 +1,20 @@
 <?php
+
+/*
+ * This file is part of the facal package.
+ *
+ * (c) IrPUG https://github.com/irpug
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace IrPUG\FaCal\Lib;
 
 /**
  * Trait JalaliCal
  * @package IrPUG\FaCal\Lib
+ * @author Reza Haghighi <reza.haghighi@gmail.com>
  */
 
 trait JalaliCal
