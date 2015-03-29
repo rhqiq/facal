@@ -1,6 +1,6 @@
 <?php
-//ini_set('intl.default_locale', 'fa_IR');
-//ini_set('date.timezone', 'Asia/Tehran');
+ini_set('intl.default_locale', 'fa_IR');
+ini_set('date.timezone', 'Asia/Tehran');
 
 require 'vendor/autoload.php';
 
@@ -28,3 +28,4 @@ dump(FaCalUtils::getQuarter($date));
 
 dump(PersianCarbon::createFromPersianDate(1394, 1, 1)->addDay());
 dump(FaCalUtils::printDateTime(PersianCarbon::createFromPersianDate(1394, 1, 1)->addDay(), FaCalUtils::FULL));
+dump(PersianCarbon::createFromPersianDate(1393, 12, 28)->diffForHumans());

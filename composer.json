@@ -1,5 +1,10 @@
 {
     "name": "irpug/facal",
+    "description": "Create and Print Persian datetime based on standard DateTime and Carbon",
+    "keywords": ["datetime", "persian datetime", "jalali datetime"],
+    "homepage": "https://github.com/irpug/facal",
+    "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Reza Haghighi",
@@ -8,7 +13,9 @@
     ],
     "require": {
         "php": ">=5.5.0",
-        "nesbot/carbon": "~1.17",
+        "nesbot/carbon": "~1.17"
+    },
+    "require-dev": {
         "symfony/var-dumper": "~2.6"
     },
     "autoload": {
