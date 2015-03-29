@@ -7,22 +7,51 @@ A collection of Persian date/time utilities to get and print DateTime Object in 
 
 ## Requirements
 
-PHP >= 5.4
+PHP >= 5.3
 Carbon Library  [http://carbon.nesbot.com](http://carbon.nesbot.com)
+php intl extension 
 
 ## Install
 
 Via Composer
 
 ``` bash
-$ composer require league/:package_name
+$ composer require irpug/facal
 ```
 
 ## Usage
 
 ``` php
-$skeleton = new League\Skeleton();
-echo $skeleton->echoPhrase('Hello, League!');
+ini_set('intl.default_locale', 'fa_IR');
+
+require 'vendor/autoload.php';
+
+use IrPUG\FaCal\Lib\PersianDateTime;
+use IrPUG\FaCal\Lib\PersianCarbon;
+use IrPUG\FaCal\FaCalUtils;
+
+$date = new PersianDateTime();
+$date->setPersianDate(1394, 2, 2);
+
+var_dump($date);
+
+
+var_dump(FaCalUtils::printDateTime($date, FaCalUtils::FULL));
+var_dump(FaCalUtils::printDateTime($date, FaCalUtils::SHORT));
+var_dump(FaCalUtils::printDateTime($date, FaCalUtils::NONE));
+var_dump(FaCalUtils::printDateTime($date, FaCalUtils::LONG));
+var_dump(FaCalUtils::printDateTime($date, FaCalUtils::MEDIUM));
+var_dump(FaCalUtils::printDateTime($date, "EEEE, d 'of' MMMM y"));
+var_dump(FaCalUtils::getYear($date));
+var_dump(FaCalUtils::getMonthNum($date));
+var_dump(FaCalUtils::getMonthName($date));
+var_dump(FaCalUtils::getWeekdayName($date));
+var_dump(FaCalUtils::getWeekdayNum($date));
+var_dump(FaCalUtils::getQuarter($date));
+
+var_dump(PersianCarbon::createFromPersianDate(1394, 1, 1)->addDay());
+var_dump(FaCalUtils::printDateTime(PersianCarbon::createFromPersianDate(1394, 1, 1)->addDay(), FaCalUtils::FULL));
+var_dump(PersianCarbon::createFromPersianDate(1393, 12, 28)->diffForHumans());
 ```
 
 
