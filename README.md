@@ -7,9 +7,9 @@ A collection of Persian date/time utilities to get and print DateTime Object in 
 
 ## Requirements
 
-PHP >= 5.3
-Carbon Library  [http://carbon.nesbot.com](http://carbon.nesbot.com)
-php intl extension 
+- PHP >= 5.3
+- php intl extension [http://php.net/manual/en/intl.installation.php](http://php.net/manual/en/intl.installation.php)
+- Carbon Library  [http://carbon.nesbot.com](http://carbon.nesbot.com)
 
 ## Install
 
